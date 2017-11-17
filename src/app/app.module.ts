@@ -10,6 +10,7 @@ import { NgForOf, Location, CommonModule} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { CardHoverDirective } from './card-hover.directive';
 
 //Services
 import { DataService, IChirp } from './data.service';
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     ListComponent,
     LoginformComponent,
     SignupformComponent,
-    SinglepostComponent
+    SinglepostComponent,
+    CardHoverDirective
   ],
   imports: [
     BrowserModule,
