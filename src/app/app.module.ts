@@ -10,10 +10,16 @@ import { NgForOf, Location, CommonModule} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/material';
+
+//Services
 import { DataService, IChirp } from './data.service';
+import { UsersService, IUser } from './users.service'
+
 import { RouterModule, Routes } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
+import { FollowersService } from './followers.service';
+
 
 const appRoutes: Routes = [
 {
@@ -50,11 +56,10 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-
     HttpModule,
     CommonModule
   ],
-  providers: [DataService, FormBuilder],
+  providers: [DataService, UsersService, FollowersService, FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,11 @@
 
 import { Injectable } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+
 
 import 'rxjs/add/operator/map';
+
 
 
 export interface IChirp  {
@@ -22,7 +25,7 @@ export class DataService {
 
     constructor(private http: Http) {}
 
-    getChirps() {
+    getChirps(): Observable<any>  {
         return this.http.get(DataService.api)
         .map(response => response.json())
         .map(chirps => {
@@ -30,18 +33,18 @@ export class DataService {
         });
     }
 
-    getChirp(id) {
-        return this.http.get(`${DataService.api}/${id}`)
-        .map(response => response.json());
+    getChirp(id): Observable<any> {
+        return this.http.get(`${DataService.api}/${id}`);
+        
     }
 
-    createChirp(chirp: IChirp) {
-        return this.http.post(DataService.api, chirp)
-        .map(response => response.text());
+    createChirp(chirp: IChirp): Observable<any>  {
+        return this.http.post(DataService.api, chirp);
+       
     }
 
-    deleteChirp(id) {
-        return this.http.delete(`${DataService.api}/${id}`)
-        .map(response => response.text());
+    deleteChirp(id): Observable<any>  {
+        return this.http.delete(`${DataService.api}/${id}`);
+        
     }
 }

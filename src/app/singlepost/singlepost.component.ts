@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DataService, IChirp } from '../data.service';
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -27,7 +28,9 @@ export class SinglepostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.dataService.getChirp(params.get('id')))
+      .switchMap((params: ParamMap) =>  {
+        return Observable.from(this.dataService.getChirp(params.get('id')))
+      })
       .subscribe(chirp => this.chirp = chirp);
   }
 }
