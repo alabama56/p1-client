@@ -1,10 +1,11 @@
 <h2 id=list-header>What's on your mind?</h2>
 
-<mat-card *ngFor='let chirp of chirps' appCardHover [routerLink]="['/single', chirp.id]" class='chirp-card'>
-    <ng-container (click)='getChirp($event)'>
-      <mat-card-title>{{ chirp.name | uppercase }}</mat-card-title>
-      <mat-card-subtitle>@{{ chirp.username }}</mat-card-subtitle>
-      <mat-card-content><p>{{ chirp.message }}</p></mat-card-content>
-    </ng-container>
+<mat-card *ngFor='let chirp of chirps' (click)="openDialog(chirp)" appCardHover class='chirp-card'>
+
+    <mat-card-title>{{ chirp.name | uppercase }}</mat-card-title>
+    <mat-card-subtitle>@{{ chirp.username }}</mat-card-subtitle>
+    <mat-card-content><p>{{ chirp.message }}</p></mat-card-content>
+
   </mat-card>
+
   

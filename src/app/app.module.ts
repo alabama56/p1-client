@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { CardHoverDirective } from './card-hover.directive';
+import { MatDialogModule } from '@angular/material';
 
 //Services
 import { DataService, IChirp } from './data.service';
@@ -20,6 +21,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { FollowersService } from './followers.service';
+import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 
 
 const appRoutes: Routes = [
@@ -31,6 +33,10 @@ const appRoutes: Routes = [
   path: 'list',
   component: ListComponent
 },
+{
+  path: 'single/:id',
+  component: DialogOverviewDialog
+}
 ];
 
 
@@ -42,7 +48,8 @@ const appRoutes: Routes = [
     LoginformComponent,
     SignupformComponent,
     SinglepostComponent,
-    CardHoverDirective
+    CardHoverDirective,
+    DialogOverviewDialog
   ],
   imports: [
     BrowserModule,
@@ -59,8 +66,10 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     HttpModule,
-    CommonModule
+    CommonModule,
+    MatDialogModule
   ],
+  entryComponents: [DialogOverviewDialog],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
   bootstrap: [AppComponent]
 })

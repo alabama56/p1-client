@@ -10,7 +10,8 @@ import 'rxjs/add/operator/map';
 
 export interface IChirp  {
     id: string;
-    user: string;
+    name: string;
+    username: string;
     message: string;
 }
 
