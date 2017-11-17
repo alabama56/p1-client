@@ -3,3 +3,37 @@
 body{
     background-color:black;
 }
+
+body {
+    margin-top: 5em;
+    text-align: center;
+    padding: 0em 14em;
+  }
+  
+  #toolBar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color: lavenderblush;
+    background-color:pink;
+  }
+  
+  .form-container, form, .mat-form-field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .form-container > * {
+      width: 100%;
+    }
+  
+    mat-card{
+        height: 10em;
+        width: 40em;
+        text-align:center;
+        p{
+            text-align:center;
+        }
+    } 
