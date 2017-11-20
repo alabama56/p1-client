@@ -12,7 +12,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule, MatI
 import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { CardHoverDirective } from './card-hover.directive';
 import { MatDialogModule } from '@angular/material';
-
+import { UsersPageComponent }  from './usersPage/users.page.component'
 //Services
 import { DataService, IChirp } from './data.service';
 import { UsersService, IUser } from './users.service';
@@ -23,35 +23,8 @@ import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
-<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
 
-
-const appRoutes: Routes = [
-{
-  path: '',
-  component: LoginformComponent
-},
-{
-  path: 'list',
-  component: ListComponent
-},
-{
-  path: 'single/:id',
-  component: DialogOverviewDialog
-},
-
-{
-  path: 'profile/:id',
-  component: ProfileComponent
-}
-]
-
-=======
-import { UsersPageComponent } from './userspage/users.page.component';
-
-
->>>>>>> 275577ee2b116288a4099a58400ae9b9e3fc5cc0
 
 
 @NgModule({
@@ -63,12 +36,8 @@ import { UsersPageComponent } from './userspage/users.page.component';
     SinglepostComponent,
     CardHoverDirective,
     DialogOverviewDialog,
-<<<<<<< HEAD
     ProfileComponent,
-
-=======
     UsersPageComponent
->>>>>>> 275577ee2b116288a4099a58400ae9b9e3fc5cc0
   ],
   imports: [
     BrowserModule,
