@@ -23,6 +23,7 @@ import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
+import { UsersPageComponent } from './userspage/users.page.component';
 
 
 
@@ -35,7 +36,8 @@ import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
     SignupformComponent,
     SinglepostComponent,
     CardHoverDirective,
-    DialogOverviewDialog
+    DialogOverviewDialog,
+    UsersPageComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
     MatDialogModule,
     AppRoutingModule
   ],
-  entryComponents: [DialogOverviewDialog],
+  entryComponents: [DialogOverviewDialog, LoginformComponent],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
   bootstrap: [AppComponent]
 })
