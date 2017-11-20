@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { UsersService, IUser} from '../users.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+
 
 @Component({
   selector: 'app-users.page',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.page.component.scss']
 })
 export class UsersPageComponent implements OnInit {
+  users:Array <IUser>;
+  user: IUser;
 
-  constructor() { }
 
-  ngOnInit() {
+  
+  constructor(private usersService: UsersService)
+     { }
+
+  ngOnInit(): void {
+    this.usersService.getUsers()
+    .subscribe((response) => this.users = response);
   }
-
 }
