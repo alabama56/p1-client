@@ -15,7 +15,7 @@ export class AppComponent {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(LoginformComponent, {
-      width: '400px',
+      width: '30em',
       data: { }
      
     });
