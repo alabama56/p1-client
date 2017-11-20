@@ -22,6 +22,7 @@ import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const appRoutes: Routes = [
@@ -36,8 +37,13 @@ const appRoutes: Routes = [
 {
   path: 'single/:id',
   component: DialogOverviewDialog
+},
+
+{
+  path: 'profile/:id',
+  component: ProfileComponent
 }
-];
+]
 
 
 
@@ -49,7 +55,9 @@ const appRoutes: Routes = [
     SignupformComponent,
     SinglepostComponent,
     CardHoverDirective,
-    DialogOverviewDialog
+    DialogOverviewDialog,
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
