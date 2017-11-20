@@ -11,7 +11,7 @@
 <mat-menu #menu="matMenu">
    
     <button mat-menu-item routerLink='/list'>List</button>
-    <button mat-menu-item routerLink='/'>Login</button>
+    <button mat-menu-item (click)="openDialog()">Login</button>
 </mat-menu>
 <router-outlet></router-outlet>
 

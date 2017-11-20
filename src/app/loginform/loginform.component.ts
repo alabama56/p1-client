@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-loginform',
@@ -16,7 +17,9 @@ export class LoginformComponent implements OnInit {
     remember: new FormControl()
   })
   */
-  constructor(private formBuilder: FormBuilder ) { }
+  constructor(private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<LoginformComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -25,6 +28,10 @@ export class LoginformComponent implements OnInit {
       remember: [ false, ]
     });
 
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   OnSubmit(jsonForm) {
