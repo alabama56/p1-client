@@ -1,10 +1,11 @@
 
-<ng-container *ngIf="user$ | async as user;"></ng-container>
-  <mat-card style="background-image: url('{{ background_img }}'); background-size: cover;" class="img-bg">
+<ng-container *ngIf="user$ | async as user;">
+  <mat-card [ngStyle]="{ 'background': 'url(' + user.background_img + ')' }" class="img-bg">
     
     <!-- http://qige87.com/data/out/96/wp-image-144045072.png -->
 
-</mat-card>
+  </mat-card>
+</ng-container>
 
 <ng-container *ngIf="user$ | async as user;">
   <mat-card class="user-info" >
@@ -18,6 +19,7 @@
 
 <mat-card *ngFor="let chirp of chirps" class="chirps-list">
   <mat-card-title>{{ chirp.name }}</mat-card-title>
+  
   <mat-card-content>{{ chirp.message }}</mat-card-content>
 </mat-card>
 
