@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable, Directive, ElementRef, Input, Output  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
@@ -12,7 +12,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule, MatI
 import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { CardHoverDirective } from './card-hover.directive';
 import { MatDialogModule } from '@angular/material';
-
+import { UsersPageComponent }  from './usersPage/users.page.component'
 //Services
 import { DataService, IChirp } from './data.service';
 import { UsersService, IUser } from './users.service';
@@ -25,13 +25,6 @@ import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 
 import { ProfileComponent } from './profile/profile.component';
-
-
-
-import { UsersPageComponent } from './userspage/users.page.component';
-
-
-
 
 
 @NgModule({
@@ -66,7 +59,8 @@ import { UsersPageComponent } from './userspage/users.page.component';
     HttpModule,
     CommonModule,
     MatDialogModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   entryComponents: [DialogOverviewDialog, LoginformComponent],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
