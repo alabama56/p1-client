@@ -15,29 +15,15 @@ import { MatDialogModule } from '@angular/material';
 
 //Services
 import { DataService, IChirp } from './data.service';
-import { UsersService, IUser } from './users.service'
+import { UsersService, IUser } from './users.service';
 
+import { AppRoutingModule } from "./app.routing";
 import { RouterModule, Routes } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 
-
-const appRoutes: Routes = [
-{
-  path: '',
-  component: LoginformComponent
-},
-{
-  path: 'list',
-  component: ListComponent
-},
-{
-  path: 'single/:id',
-  component: DialogOverviewDialog
-}
-];
 
 
 
@@ -53,7 +39,6 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -67,7 +52,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     HttpModule,
     CommonModule,
-    MatDialogModule
+    MatDialogModule,
+    AppRoutingModule
   ],
   entryComponents: [DialogOverviewDialog],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
