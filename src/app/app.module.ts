@@ -12,7 +12,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule, MatI
 import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { CardHoverDirective } from './card-hover.directive';
 import { MatDialogModule } from '@angular/material';
-import { UsersPageComponent }  from './usersPage/users.page.component'
+import { UsersPageComponent }  from './userspage/userspage.component'
 //Services
 import { DataService, IChirp } from './data.service';
 import { UsersService, IUser } from './users.service';

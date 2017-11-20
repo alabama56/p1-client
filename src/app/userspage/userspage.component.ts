@@ -4,9 +4,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
-  selector: 'app-users.page',
-  templateUrl: './users.page.component.html',
-  styleUrls: ['./users.page.component.scss']
+  selector: 'app-users-page',
+  templateUrl: './userspage.component.html',
+  styleUrls: ['./userspage.component.scss']
 })
 export class UsersPageComponent implements OnInit {
   users:Array <IUser>;
