@@ -15,13 +15,15 @@ import { MatDialogModule } from '@angular/material';
 
 //Services
 import { DataService, IChirp } from './data.service';
-import { UsersService, IUser } from './users.service'
+import { UsersService, IUser } from './users.service';
 
+import { AppRoutingModule } from "./app.routing";
 import { RouterModule, Routes } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
+<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -45,6 +47,11 @@ const appRoutes: Routes = [
 }
 ]
 
+=======
+import { UsersPageComponent } from './userspage/users.page.component';
+
+
+>>>>>>> 275577ee2b116288a4099a58400ae9b9e3fc5cc0
 
 
 @NgModule({
@@ -56,12 +63,15 @@ const appRoutes: Routes = [
     SinglepostComponent,
     CardHoverDirective,
     DialogOverviewDialog,
+<<<<<<< HEAD
     ProfileComponent,
 
+=======
+    UsersPageComponent
+>>>>>>> 275577ee2b116288a4099a58400ae9b9e3fc5cc0
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -75,9 +85,10 @@ const appRoutes: Routes = [
     MatSelectModule,
     HttpModule,
     CommonModule,
-    MatDialogModule
+    MatDialogModule,
+    AppRoutingModule
   ],
-  entryComponents: [DialogOverviewDialog],
+  entryComponents: [DialogOverviewDialog, LoginformComponent],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
   bootstrap: [AppComponent]
 })
