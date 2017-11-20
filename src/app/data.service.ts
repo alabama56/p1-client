@@ -20,7 +20,7 @@ export interface IChirp  {
 export class DataService {
 
 
-    static api = 'api/chirps';
+    static api = '/api/chirps';
 
     chirps: Array<IChirp> = [];
 

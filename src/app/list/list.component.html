@@ -1,11 +1,11 @@
 <h2 id=list-header>What's on your mind?</h2>
 
-<mat-card *ngFor='let chirp of chirps' (click)="openDialog(chirp)" appCardHover class='chirp-card'>
+<mat-card id=cardstyle *ngFor='let chirp of chirps' (click)="openDialog(chirp)" appCardHover class='chirp-card'>
 
     <mat-card-title>{{ chirp.name | uppercase }}</mat-card-title>
     <mat-card-subtitle>@{{ chirp.username }}</mat-card-subtitle>
     <mat-card-content><p>{{ chirp.message }}</p></mat-card-content>
-
+    <span><i class="material-icons">delete</i> <i class="material-icons">favorite_border</i> <i class="fa fa-retweet" aria-hidden="true"></i></span>
   </mat-card>
 
   
