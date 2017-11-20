@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
+import {  HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
 
@@ -24,14 +24,18 @@ export class DataService {
 
     chirps: Array<IChirp> = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: HttpClient) {}
 
     getChirps(): Observable<any>  {
         return this.http.get(DataService.api)
-        .map(response => response.json())
-        .map(chirps => {
-            return chirps.reverse();
-        });
+        // .map(chirps => {
+        //     return chirps.reverse();
+        // });
+    }
+
+    getChirpsByUser(id): Observable<any> {
+        return this.http.get(`${DataService.api}/user/${id}`);
+
     }
 
     getChirp(id): Observable<any> {

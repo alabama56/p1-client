@@ -1,0 +1,34 @@
+mat-card,
+mat-card mat-card-subtitle {
+    color: black //Mat card subtitle wasnt using black color for some reason
+}
+mat-card .title-margin {
+    margin-top: 50px;
+}
+.img-bg {
+    height: 15vh;
+    // background-image: url("http://qige87.com/data/out/96/wp-image-144045072.png");
+    // background-size:  cover;
+}
+
+.user-info {
+    height: 15vh;
+    background-color: #fff;
+}
+
+
+
+.profile-pic {
+    position:  absolute;
+    top: 20vh;
+    left: 40vw; 
+}
+
+
+
+.chirps-list {
+    background-color: #fff;
+    margin-top: 20px;
+    
+
+}

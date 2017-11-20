@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 
 
 export interface IUser {
-  id: number;
   name: string,
 	username: string;
   email: string;
@@ -27,7 +26,7 @@ export class UsersService {
 
  users: Array<IUser> = [];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any> {
     return this.http.get(UsersService.api)
