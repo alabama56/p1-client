@@ -1,7 +1,5 @@
-<mat-card>
-  <mat-card-title>
-
-  </mat-card-title>
+<mat-card id="cardstyle">
+  <mat-card-title>Create an Account</mat-card-title>
     <form novalidate [formGroup]="form" (ngSubmit)="createUser()" >
       <mat-form-field>
         <input matInput formControlName="name" name="name" placeholder="Name">
