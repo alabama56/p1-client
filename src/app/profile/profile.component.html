@@ -1,13 +1,8 @@
 
-
-<mat-card class="img-bg">
-
-  
-  <mat-card-content>
-  
-  </mat-card-content>
-
-
+<ng-container *ngIf="user$ | async as user;"></ng-container>
+  <mat-card style="background-image: url('{{ background_img }}'); background-size: cover;" class="img-bg">
+    
+    <!-- http://qige87.com/data/out/96/wp-image-144045072.png -->
 
 </mat-card>
 

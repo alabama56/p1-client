@@ -3,6 +3,7 @@ import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 import { ListComponent } from "./list/list.component";
 import { SignupformComponent } from "./signupform/signupform.component";
 import { UsersPageComponent } from './userspage/users.page.component';
+import { ProfileComponent } from "./profile/profile.component"
 
 import { NgModule }             from '@angular/core';
 
@@ -24,6 +25,10 @@ const appRoutes: Routes = [
     {
         path: 'signup',
         component: SignupformComponent
+    },
+    {
+      path: 'profile/:id',
+      component: ProfileComponent
     }
     ];
 
