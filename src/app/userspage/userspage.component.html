@@ -1,7 +1,7 @@
 <h2>Who to follow?</h2>
 
 <span>
-<mat-card  *ngFor='let chirp of chirps' (click)="" appCardHover class='chirp-card'>
+<mat-card  *ngFor='let chirp of chirps'  appCardHover class='chirp-card'>
   <div mat-card-avatar class="example-header-image"></div>
   <mat-card-title>{{chirp.name}}</mat-card-title>
   <mat-card-subtitle>@{{chirp.username}}</mat-card-subtitle>
