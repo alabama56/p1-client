@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable, Directive, ElementRef, Input, Output  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
@@ -55,7 +55,8 @@ import { UsersPageComponent } from './userspage/users.page.component';
     HttpModule,
     CommonModule,
     MatDialogModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   entryComponents: [DialogOverviewDialog, LoginformComponent],
   providers: [DataService, UsersService, FollowersService, FormBuilder],

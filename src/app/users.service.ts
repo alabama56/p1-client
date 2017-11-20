@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 
 
 export interface IUser {
-  id: number;
   name: string,
 	username: string;
   email: string;
