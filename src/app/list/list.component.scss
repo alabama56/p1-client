@@ -12,6 +12,7 @@
 
 #list-header{
     color:black;
+    text-align: center;
 }
 
 #cardstyle {
@@ -22,4 +23,23 @@
 }
 .fafaretweet{
     height: 3em;
+}
+
+#cardstyle2 {
+    background-color:#000000;
+    color: white;
+    margin-left:30%;
+    margin-right: 30%;
+    padding-bottom: 2 em;
+    
+}
+.box{
+   
+   margin-bottom: 1em !important; 
+}
+
+#chirparea{
+    width: 30em;
+    height: 5em;
+    margin-left: 2em;
 }
