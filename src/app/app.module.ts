@@ -13,6 +13,7 @@ import { MatSelectModule, MatToolbarModule, MatIconModule } from '@angular/mater
 import { CardHoverDirective } from './card-hover.directive';
 import { MatDialogModule } from '@angular/material';
 import { UsersPageComponent }  from './userspage/userspage.component'
+import { MatSidenavModule } from '@angular/material';
 //Services
 import { DataService, IChirp } from './data.service';
 import { UsersService, IUser } from './users.service';
@@ -25,6 +26,8 @@ import { FollowersService } from './followers.service';
 import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 
 import { ProfileComponent } from './profile/profile.component';
+import { FollowersComponent } from './followers/followers.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -36,11 +39,10 @@ import { ProfileComponent } from './profile/profile.component';
     SinglepostComponent,
     CardHoverDirective,
     DialogOverviewDialog,
-
     ProfileComponent,
-
-
-    UsersPageComponent
+    UsersPageComponent,
+    FollowersComponent,
+    SidenavComponent
 
   ],
   imports: [
@@ -60,7 +62,8 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule,
     MatDialogModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule
   ],
   entryComponents: [DialogOverviewDialog, LoginformComponent],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
