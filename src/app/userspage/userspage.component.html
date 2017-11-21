@@ -1,8 +1,8 @@
 <h2>Who to follow?</h2>
 
 
-<div>
-<span>
+<div class="box">
+
 <mat-card routerLink='/profile/{{user.id}}' class='user-card'  *ngFor='let user of users'  appCardHover id="cardstyle">
 
  <img mat-card-image src="{{user.background_img}}" alt="">
@@ -16,7 +16,7 @@
   <mat-card-subtitle routerLink='/profile/{{user.id}}'>@{{user.username}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
-</span>
+
 </div>
 
 
