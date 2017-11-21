@@ -15,15 +15,32 @@
     <mat-card-title class="title-margin">{{ user.name }}</mat-card-title>
     <mat-card-subtitle> {{ user.email }}</mat-card-subtitle>
     <mat-card-content>{{ user.tagline }}</mat-card-content>
+    <button class="side-nav-btn" type="button" mat-button (click)="sidenav.open()">
+        Who do I follow?
+    </button>
   </mat-card>
 </ng-container>
 
-<div class="content-container">
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="example-sidenav">
+        <mat-card *ngFor="let follower of followers" class="chirps-list following-nav" >
+            <img mat-card-sm-image src="{{ follower.pro_img }}" class="following-img" >
+            <mat-card-title>{{ follower.name }}</mat-card-title>
+            <mat-card-subtitle>{{follower.username}}</mat-card-subtitle>
+        </mat-card>
+    </mat-sidenav>
+  
+    <div class="example-sidenav-content">
+      
+      <mat-card *ngFor="let chirp of chirps" class="chirps-list">
+          <mat-card-title>{{ chirp.name }}</mat-card-title>
+          <mat-card-content>{{ chirp.message }}</mat-card-content>
+      </mat-card>
+    </div>
+  
+</mat-sidenav-container>
 
 
-  <mat-card *ngFor="let chirp of chirps" class="chirps-list">
-      <mat-card-title>{{ chirp.name }}</mat-card-title>
-      <mat-card-content>{{ chirp.message }}</mat-card-content>
-  </mat-card>
 
-</div>
+
