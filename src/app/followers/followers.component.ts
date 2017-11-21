@@ -11,5 +11,4 @@ export class FollowersComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

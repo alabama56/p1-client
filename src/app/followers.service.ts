@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 export interface IFollow {
   follower_id: number;
   following_id: number;
+  
 }
 
 @Injectable()
@@ -17,8 +18,7 @@ export class FollowersService {
 
  static api = 'api/followers';
 
-
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
 
 
@@ -27,10 +27,12 @@ export class FollowersService {
   };
 
   unfollow(follower: IFollow): Observable<any> {
-    return this.http.delete(FollowersService.api, {
-      body: follower
-    });
+    return this.http.put(FollowersService.api, {body: follower} );
   };
+
+  getFollowers(id): Observable<any> {
+    return this.http.get(`${FollowersService.api}/${id}`)
+  }
 
 
 }
