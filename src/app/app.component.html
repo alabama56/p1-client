@@ -1,20 +1,27 @@
-<mat-toolbar color="primary" class="mat-elevation-z2" id='toolBar' a href="#" class="brand-logo" img src="/Users/Innovationbham_3/Desktop/p1-client/src/assets/work.png" height=400 width=400>
-    <span>CHIRPER</span>
-  
+<mat-toolbar color="primary" class="mat-elevation-z2" id='toolBar'>
+   <a href='/'><img src="https://image.ibb.co/nCPXDR/walk2.png" alt="walk2" height="36px"></a>
+   CHIRPER
+   <div class="allbtns">
+    <button id='navbtns' mat-icon-button routerLink='/list'><i class="material-icons">home</i>Home</button>
+    <button id='navbtns' mat-icon-button routerLink='/signup'><i class="material-icons">account_circle</i>Sign up</button>
+    <button id='navbtns' mat-icon-button routerLink='/users'><i class="material-icons">chat_bubble</i>Who's Chirpin?</button>
+    </div>
     <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
-
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    
+    
+        
+   
+   <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
 
 </mat-toolbar>
 
-<mat-menu #menu="matMenu">
+<!--<mat-menu #menu="matMenu">
    
     <button mat-menu-item routerLink='/list'>List</button>
     <button mat-menu-item (click)="openDialog()">Login</button>
     <button mat-menu-item routerLink='/signup'>Sign Up</button>
     <button mat-menu-item routerLink='/users'>Who's Chirpin'</button>
     
-</mat-menu>
+</mat-menu> -->
 <router-outlet></router-outlet>
 
