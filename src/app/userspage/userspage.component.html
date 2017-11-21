@@ -5,8 +5,13 @@
 <span>
 <mat-card class='user-card'  *ngFor='let user of users'  appCardHover id="cardstyle">
   <div mat-card-avatar class="example-header-image"></div>
-  <mat-card-title>{{user.name}}</mat-card-title>
-  <mat-card-subtitle>@{{user.username}}</mat-card-subtitle>
+  <mat-card-title routerLink='/profile/{{user.id}}'>{{user.name}}</mat-card-title>
+  <mat-card-subtitle routerLink='/profile/{{user.id}}'>@{{user.username}}</mat-card-subtitle>
 </mat-card>
 </span>
 </div>
+
+<button mat-menu-item routerLink='/list'>List</button>
+<button mat-menu-item (click)="openDialog()">Login</button>
+<button mat-menu-item routerLink='/signup'>Sign Up</button>
+<button mat-menu-item routerLink='/users'>Who's Chirpin'</button>
