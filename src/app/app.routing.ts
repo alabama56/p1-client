@@ -3,7 +3,9 @@ import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 import { ListComponent } from "./list/list.component";
 import { SignupformComponent } from "./signupform/signupform.component";
 import { UsersPageComponent } from './userspage/userspage.component';
-import { ProfileComponent } from "./profile/profile.component"
+import { ProfileComponent } from "./profile/profile.component";
+import { FollowersComponent } from './followers/followers.component';
+
 
 import { NgModule }             from '@angular/core';
 
@@ -15,9 +17,9 @@ import { NgModule }             from '@angular/core';
 
 const appRoutes: Routes = [
     {
-        path: 'users',
-        component: UsersPageComponent
-      },
+      path: 'users',
+      component: UsersPageComponent
+    },
     {
       path: 'list',
       component: ListComponent
@@ -29,6 +31,10 @@ const appRoutes: Routes = [
     {
       path: 'profile/:id',
       component: ProfileComponent
+    },
+    {
+      path: 'following/:id',
+      component: FollowersComponent
     }
     ];
 

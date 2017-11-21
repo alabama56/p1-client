@@ -1,0 +1,47 @@
+.follower-card{
+    margin: 0em auto 1em; 
+    margin-left:30%;
+    margin-right: 30%;    
+    margin-top: 1em;
+}
+
+mat-card,
+mat-card mat-card-subtitle {
+    color: black //Mat card subtitle wasnt using black color for some reason
+}
+
+.test {
+    height: 400px;
+    width: 800px;
+}
+
+mat-card .title-margin {
+    margin-top: 50px;
+}
+.img-bg {
+    height: 15vh;
+    background-size:  cover !important;
+    background-repeat: no-repeat;
+    background-position: center !important;
+}
+
+.user-info {
+    height: 15vh;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.profile-pic-container{
+    width: 100%;
+    position:  absolute;
+    z-index: 100;
+}
+
+.profile-pic {
+    position:  absolute;
+    z-index: 100;
+    border-radius: 50%;
+    margin: 0 auto;
+    left: 2em;
+}
