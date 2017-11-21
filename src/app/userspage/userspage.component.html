@@ -4,9 +4,17 @@
 <div>
 <span>
 <mat-card routerLink='/profile/{{user.id}}' class='user-card'  *ngFor='let user of users'  appCardHover id="cardstyle">
-  <img mat-card-lg-image class="profile-pic" src="{{ user.pro_img }}">
+
+ <img mat-card-image src="{{user.background_img}}" alt="">
+  
+  <mat-card-header>
+  <ng-container *ngIf="user$ | async as user;"></ng-container>
+    
+      <img mat-card-avatar src="{{ user.pro_img }}">
+    
   <mat-card-title routerLink='/profile/{{user.id}}'>{{user.name}}</mat-card-title>
   <mat-card-subtitle routerLink='/profile/{{user.id}}'>@{{user.username}}</mat-card-subtitle>
+  </mat-card-header>
 </mat-card>
 </span>
 </div>

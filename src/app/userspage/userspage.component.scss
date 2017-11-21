@@ -36,5 +36,25 @@ h2{
     height:5em;
     margin:1em;
     width:5em;
+    border-radius: 50%;
+    
+    
     
 }
+
+.profile-pic-container{
+    width: 100%;
+    z-index: 100;
+    
+   
+}
+
+.cover-photo{
+    background-size:cover;
+    width:12em;
+    height:5em;
+    margin:.5em;
+}
+
+
+// change to background image
