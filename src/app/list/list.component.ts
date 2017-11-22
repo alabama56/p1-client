@@ -3,7 +3,7 @@ import { DataService, IChirp } from '../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { DialogOverviewDialog } from "../dialog/dialogoverviewdialog.component"
+import { DialogOverviewDialog } from "../dialog/dialogoverviewdialog.component";
 
 @Component({
   selector: 'app-list',

@@ -9,11 +9,15 @@
 
 <mat-card id=cardstyle *ngFor='let chirp of chirps' (click)="openDialog(chirp)" appCardHover class='chirp-card'>
 
-   
-    <mat-card-title>{{ chirp.name | uppercase }}</mat-card-title>
+  <mat-card-header>
+    <img mat-card-avatar src="{{ chirp.pro_img }}">
+    <mat-card-title>{{ chirp.name }}</mat-card-title>
     <mat-card-subtitle>@{{ chirp.username }}</mat-card-subtitle>
-    <mat-card-content><p>{{ chirp.message }}</p></mat-card-content>
-    
+   
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ chirp.message }}</p>
+  </mat-card-content>
     
   </mat-card>
 

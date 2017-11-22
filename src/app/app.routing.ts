@@ -16,6 +16,11 @@ import { NgModule }             from '@angular/core';
 
 
 const appRoutes: Routes = [
+    { 
+      path: '', 
+      redirectTo: '/signup', 
+      pathMatch: 'full' 
+    },
     {
       path: 'users',
       component: UsersPageComponent

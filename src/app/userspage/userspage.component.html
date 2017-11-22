@@ -1,4 +1,4 @@
-<h2>Who to follow?</h2>
+<h2>Who's Chirpin</h2>
 
 
 <div class="box">
@@ -8,9 +8,8 @@
  <img mat-card-image src="{{user.background_img}}" alt="">
   
   <mat-card-header>
-  <ng-container *ngIf="user$ | async as user;"></ng-container>
     
-      <img mat-card-avatar src="{{ user.pro_img }}">
+    <img mat-card-avatar src="{{ user.pro_img }}">
     
   <mat-card-title routerLink='/profile/{{user.id}}'>{{user.name}}</mat-card-title>
   <mat-card-subtitle routerLink='/profile/{{user.id}}'>@{{user.username}}</mat-card-subtitle>
