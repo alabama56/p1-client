@@ -33,6 +33,10 @@ export class DataService {
         // });
     }
 
+    getChirpsByFollowing(id): Observable<any> {
+        return this.http.get(`${DataService.api}/subs/${id}`)
+    }
+
     getChirpsByUser(id): Observable<any> {
         return this.http.get(`${DataService.api}/user/${id}`);
 

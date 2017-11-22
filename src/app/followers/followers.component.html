@@ -1,3 +1,34 @@
-<p>
-  followers works!
-</p>
+
+<ng-container *ngIf="user$ | async as user;">
+  <mat-card [ngStyle]="{ 'background': 'url(' + user.background_img + ')' }" class="img-bg">
+  </mat-card>
+</ng-container>
+
+<!-- <ng-container *ngIf="user$ | async as user;">
+  <div class="profile-pic-container">
+    <img mat-card-lg-image class="profile-pic" src="{{ user.pro_img }}">
+  </div>
+</ng-container> -->
+
+<ng-container *ngIf ="user$ | async as user;">
+  <mat-card class="user-info" >
+
+      <img mat-card-lg-image src="{{ user.pro_img }}" class="profile-pic"/>
+      <mat-card-title class="title-margin">{{ user.name }}</mat-card-title>
+      <mat-card-subtitle> {{ user.email }}</mat-card-subtitle>
+
+    <mat-card-content>{{ user.tagline }}</mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-container *ngFor="let follower of followers">
+<mat-card id="cardstyle" class="follower-card" (click)="openDialog(follower)">
+  <mat-card-header>
+    <img mat-card-avatar src="{{ follower.pro_img }}"/>
+    <mat-card-title>{{ follower.name }}</mat-card-title>
+    <mat-card-subtitle>@{{ follower.username }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <p>{{ follower.message }}</p>
+</mat-card>
+</ng-container>
