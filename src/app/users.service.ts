@@ -8,11 +8,11 @@ import 'rxjs/add/operator/map';
 
 
 export interface IUser {
-  name: string,
-	username: string;
-  email: string;
-  password: string;
-  age: number;
+  name?: string,
+	username?: string;
+  email?: string;
+  password?: string;
+  age?: number;
   tagline?: string;
   pro_img?: string;
   background_img?: string;
@@ -46,6 +46,9 @@ export class UsersService {
     return this.http.delete(`${UsersService.api}/${id}`)
   }
 
+  updateUser(id: number, user: IUser): Observable<any>{
+    return this.http.put(`${UsersService.api}/${id}`, user)
+  }
 
 
 }

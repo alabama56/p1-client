@@ -6,6 +6,17 @@ mat-card {
     color: black;
 }
 
+
+.mat-button, .mat-icon-button, .mat-raised-button {
+    color: #0ba5a3;  
+}
+
+button .update, .mat-icon-button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
 .test {
     height: 400px;
     width: 800px;

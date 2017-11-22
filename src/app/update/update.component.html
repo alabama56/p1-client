@@ -1,0 +1,39 @@
+<mat-card id="cardstyle">
+    <mat-card-title>Update Information</mat-card-title>
+      <form novalidate [formGroup]="form" (ngSubmit)="updateUser()" >
+        <mat-form-field>
+          <input matInput formControlName="name" name="name" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="username" name="username" placeholder="Username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="email" name="email" placeholder="chirp@example.com">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="password" name="password" placeholder="Password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="age" name="age" placeholder="Age">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="tagline" name="tagline" placeholder="A Little About You">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="pro_img" name="pro_img" placeholder="Profile Image URL">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="background_img" name="background_img" placeholder="Background Image URL">
+        </mat-form-field>
+
+      
+      
+        <mat-card-actions>
+          <button mat-button md-button >Update</button>
+        </mat-card-actions>
+      </form>
+    <!-- <p>Untouched: {{ form.pristine | json }}</p>
+    <p>Dirty: {{ form.dirty | json }}</p>
+    <p>Status: {{ form.status | json }}</p> -->
+    <!-- <p>Value: {{ form.value | json }}</p> -->
+  </mat-card>

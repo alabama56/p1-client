@@ -28,6 +28,7 @@ import { DialogOverviewDialog } from './dialog/dialogoverviewdialog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FollowersComponent } from './followers/followers.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ProfileComponent,
     UsersPageComponent,
     FollowersComponent,
-    SidenavComponent
+    SidenavComponent,
+    UpdateComponent
 
   ],
   imports: [
@@ -65,7 +67,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ReactiveFormsModule,
     MatSidenavModule
   ],
-  entryComponents: [DialogOverviewDialog, LoginformComponent],
+  entryComponents: [DialogOverviewDialog, LoginformComponent, UpdateComponent],
   providers: [DataService, UsersService, FollowersService, FormBuilder],
   bootstrap: [AppComponent]
 })

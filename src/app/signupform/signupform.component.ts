@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
-import { UsersService } from '../users.service'
+import { UsersService } from '../users.service';
 
 
 

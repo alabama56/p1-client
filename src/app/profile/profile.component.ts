@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogOverviewDialog } from "../dialog/dialogoverviewdialog.component";
+import { UpdateComponent } from "../update/update.component"
 
 @Component({
   selector: 'app-profile',
@@ -60,6 +61,14 @@ export class ProfileComponent implements OnInit {
     let dialogRef = this.dialog.open(DialogOverviewDialog, {
       width: '35em',
       data: { chirp }
+     
+    });
+  }
+
+  openUpdate(user): void {
+    let dialogRef = this.dialog.open(UpdateComponent, {
+      width: '35em',
+      data: { user }
      
     });
   }
