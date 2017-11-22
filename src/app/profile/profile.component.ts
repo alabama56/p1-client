@@ -6,6 +6,8 @@ import { FollowersService, IFollow} from '../followers.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs/Rx';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { DialogOverviewDialog } from "../dialog/dialogoverviewdialog.component";
 
 @Component({
   selector: 'app-profile',
@@ -23,7 +25,8 @@ export class ProfileComponent implements OnInit {
     private userSvc: UsersService,
     private followSvc: FollowersService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private dialog: MatDialog
   ) { }
   
 
@@ -46,12 +49,18 @@ export class ProfileComponent implements OnInit {
       }).subscribe();
 
 
-    
-
     this.route.paramMap
     .subscribe((params: ParamMap): any => {
       console.log(params)
       this.followSvc.getFollowers(+params.get('id')).subscribe(res => this.followers = res);
     })
+  }
+
+  openDialog(chirp): void {
+    let dialogRef = this.dialog.open(DialogOverviewDialog, {
+      width: '35em',
+      data: { chirp }
+     
+    });
   }
 }

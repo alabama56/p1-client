@@ -1,18 +1,17 @@
 <mat-toolbar color="primary" class="mat-elevation-z2" id='toolBar'>
-   <a href='/'><img src="https://image.ibb.co/nCPXDR/walk2.png" alt="walk2" height="36px"></a>
-   CHIRPER
-   <div class="allbtns">
-    <button id='navbtns' mat-icon-button routerLink='/list'><i class="material-icons">home</i>Home</button>
-    <button id='navbtns' mat-icon-button routerLink='/signup'><i class="material-icons">account_circle</i>Sign up</button>
-    <button id='navbtns' mat-icon-button routerLink='/users'><i class="material-icons">chat_bubble</i>Who's Chirpin?</button>
-    </div>
+    <span>
+       <a href='/'><img src="https://image.ibb.co/nCPXDR/walk2.png" alt="walk2" height="36px"></a>
+        CHIRPER
+    </span>
+    <span class="example-spacer"></span>
+     
+        <button id='navbtns' mat-icon-button routerLink='/list'><i class="material-icons">home</i>Home</button>
+        <button id='navbtns' mat-icon-button (click)="openDialog()"><i class="material-icons">face</i>Log In</button>
+        <button id='navbtns' mat-icon-button routerLink='/signup'><i class="material-icons">account_circle</i>Sign up</button>
+        <button id='navbtns' mat-icon-button routerLink='/users'><i class="material-icons">chat_bubble</i>Users</button>   
+    
     <!-- This fills the remaining space of the current row -->
-    
-    
-        
-   
    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
-
 </mat-toolbar>
 
 <!--<mat-menu #menu="matMenu">
