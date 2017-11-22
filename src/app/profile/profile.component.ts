@@ -55,8 +55,3 @@ export class ProfileComponent implements OnInit {
     })
   }
 }
-
-
-// this.isbnsource.getBooks(this.isbn).subscribe(
-//   data => { this.foundBooks = data.json();
-// this.foundBooks = Array.of(this.foundBooks);
