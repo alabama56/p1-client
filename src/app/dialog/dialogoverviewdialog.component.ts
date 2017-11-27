@@ -11,8 +11,12 @@ export class DialogOverviewDialog {
   @Input()
   chirp: any;
   
+ 
+
   constructor(public dialogRef: MatDialogRef<DialogOverviewDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+   
     
   onNoClick(): void {
     this.dialogRef.close();
