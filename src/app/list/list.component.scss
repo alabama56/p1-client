@@ -39,9 +39,9 @@
 }
 
 #chirparea{
-    width: 90%;
-    height: 5em;
-    margin-left: 3%;
+    width: 98%;
+    height: 6em;
+    
 }
 
 .img-container {
@@ -52,4 +52,14 @@
 .chirp-form-img {
     margin-left: auto;
     margin-right: auto;
+}
+
+#subbtn{
+    background-color:#0ba5a3;
+    height: 3em;
+    width: 10em;
+    color: white;
+    margin-top: 1em;
+    border-radius: 0%;
+    border-color: transparent;
 }
