@@ -22,7 +22,7 @@ export interface IUser {
 @Injectable()
 export class UsersService {
 
- static api = 'api/users';
+ static api = '/api/users';
 
  users: Array<IUser> = [];
 
