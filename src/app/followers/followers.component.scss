@@ -18,12 +18,7 @@ mat-card mat-card-subtitle {
 mat-card .title-margin {
     margin-top: 50px;
 }
-.img-bg {
-    height: 15vh;
-    background-size:  cover !important;
-    background-repeat: no-repeat;
-    background-position: center !important;
-}
+
 
 .user-info {
     height: 15vh;
@@ -32,16 +27,113 @@ mat-card .title-margin {
     position: relative;
 }
 
+mat-card {
+    color: black 
+}
+
+.black-font {
+    color: black;
+}
+
+
+.mat-button, .mat-icon-button, .mat-raised-button {
+    color: #0ba5a3;  
+}
+
+button .update, .mat-icon-button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.test {
+    height: 400px;
+    width: 800px;
+}
+
+mat-card .title-margin {
+    margin-top: 50px;
+}
+.img-bg {
+    height: 15vh;
+    background-size:  cover !important;
+    background-repeat: no-repeat;
+    background-position: center !important;
+}
+
+.user-info {
+    height: 22vh;
+    background-color: #fff;
+    text-align: center;
+}
+
 .profile-pic-container{
-    width: 100%;
+    width: 98.5%;
     position:  absolute;
-    z-index: 100;
+    z-index: 1;
+    margin: 0;
 }
 
 .profile-pic {
-    position:  absolute;
-    z-index: 100;
+    
+    z-index: 1;
     border-radius: 50%;
+    margin-left: auto;
+	margin-right: auto;
+    display: block;
+    margin-bottom: 50px;
+    position: relative;
+    bottom: 70px;
+}
+
+
+
+.chirps-list {
+    background-color: #0ba5a3;
     margin: 0 auto;
-    left: 2em;
+    color: white;
+    width: 44%;
+    margin-top: 20px;
+
+}
+
+.following-nav {
+    background-color: #0ba5a3;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+
+.mat-drawer-container {
+    background-color: transparent;
+}
+
+.side-nav-btn {
+    z-index: 1;
+    background-color: #0ba5a3;
+    color: #fff;
+}
+
+.mat-drawer {
+    background-color: black;
+}
+  
+.following-img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.example-container {
+    min-height: 340px;
+}
+
+mat-card-subtitle .user-opacitiy {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+mat-card .prof-pic-cover {
+    background-size: cover;
 }

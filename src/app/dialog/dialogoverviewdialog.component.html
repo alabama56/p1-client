@@ -2,10 +2,10 @@
   
       <mat-card-title>{{ data.chirp.name | uppercase }}</mat-card-title>
       <mat-card-subtitle>@{{ data.chirp.username }}</mat-card-subtitle>
-      <mat-card-content><p>{{ data.chirp.message }}</p></mat-card-content>
+      <mat-card-content><p><span contenteditable="true">{{ data.chirp.message }}</span></p></mat-card-content>
       <mat-card-actions>
-            <button mat-icon-button><i class="material-icons">delete</i></button>
+            <button mat-icon-button (click)="deleteChirp(chirp)"><i class="material-icons">delete</i></button>
             <button mat-icon-button><i class="material-icons">favorite</i></button>
-            <button mat-icon-button><i class="material-icons">create</i></button>
+            <button mat-icon-button ><i class="material-icons">create</i></button>
           </mat-card-actions>
 </mat-card>

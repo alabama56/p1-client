@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-update',
@@ -19,7 +19,8 @@ export class UpdateComponent implements OnInit {
               private router: Router,
               private fb: FormBuilder,
               private svc: UsersService,
-              private route: ActivatedRoute,) 
+              private route: ActivatedRoute,
+              private loc: Location) 
               { this.form = this.fb.group({
                 name: [],
                 username: [],
@@ -41,10 +42,31 @@ export class UpdateComponent implements OnInit {
   updateUser(){
       let updatedInfo = (this.form.value)
       let id = (this.data.user.id)
-      console.log(id);
       this.svc.updateUser(id, updatedInfo)
-    .subscribe()
-      
+    .subscribe(() => {
+      this.dialogRef.close()
+      this.refresh()
+    })
+  }
+
+  deleteUser(){
+    let id = (this.data.user.id)
+    if (confirm("Delete this user?") == true) {
+      console.log(id)
+      this.svc.deleteUser(id)
+      .subscribe(() => {
+      })
+      this.goBack();
+    }
+    
+  }
+
+  refresh(){
+    this.router.navigate(["/users"])
+  }
+
+  goBack() {
+    this.loc.back();
   }
 }
 

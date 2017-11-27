@@ -9,10 +9,8 @@ import 'rxjs/add/operator/map';
 
 
 export interface IChirp  {
-    id: string;
-    name: string;
-    username: string;
-    message: string;
+    user_id?: string;
+    message?: string;
 }
 
 
@@ -47,8 +45,12 @@ export class DataService {
         
     }
 
-    createChirp(chirp: IChirp): Observable<any>  {
-        return this.http.post(DataService.api, chirp);
+    updateChirp(id: number, user_id: number, message: string): Observable<any> {
+        return this.http.put(DataService.api, {id, user_id, message})
+    }
+
+    createChirp(user_id: number, message: string): Observable<any>  {
+        return this.http.post(DataService.api, {user_id, message});
        
     }
 

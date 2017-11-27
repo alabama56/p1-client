@@ -1,23 +1,20 @@
 
+
 <ng-container *ngIf="user$ | async as user;">
   <mat-card [ngStyle]="{ 'background': 'url(' + user.background_img + ')' }" class="img-bg">
   </mat-card>
-</ng-container>
 
-<!-- <ng-container *ngIf="user$ | async as user;">
   <div class="profile-pic-container">
     <img mat-card-lg-image class="profile-pic" src="{{ user.pro_img }}">
   </div>
-</ng-container> -->
 
-<ng-container *ngIf ="user$ | async as user;">
   <mat-card class="user-info" >
-
-      <img mat-card-lg-image src="{{ user.pro_img }}" class="profile-pic"/>
-      <mat-card-title class="title-margin">{{ user.name }}</mat-card-title>
-      <mat-card-subtitle> {{ user.email }}</mat-card-subtitle>
-
+    <mat-card-title class="title-margin">{{ user.name }}</mat-card-title>
+    <mat-card-subtitle class="black-font"> {{ user.email }}</mat-card-subtitle>
     <mat-card-content>{{ user.tagline }}</mat-card-content>
+    <button class="side-nav-btn" type="button" mat-button [routerLink]="['/profile', user.id]">
+        Back to Main Profile
+    </button>
   </mat-card>
 </ng-container>
 

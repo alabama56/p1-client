@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-loginform',
@@ -9,33 +10,28 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class LoginformComponent implements OnInit {
 
-  public form: FormGroup;
-  /*
-  form = new FormGroup({
-    username: new FormControl("User", [ Validators.required ]),
-    password: new FormControl("abc132", [ Validators.required ]),
-    remember: new FormControl()
-  })
-  */
+  form: FormGroup;
+  
   constructor(private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<LoginformComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private svc: UsersService) {this.form = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.required],
+    });}
 
   ngOnInit() {
-    this.form = this.formBuilder.group({
-      username: ['blah', Validators.required],
-      password: ['abc123', Validators.required],
-      remember: [ false, ]
-    });
-
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  OnSubmit(jsonForm) {
-    console.log(jsonForm);
+  login() {
+   
+    this.svc.login(this.form.value.email, this.form.value.password)
+    .subscribe((user) => {
+     this.dialogRef.close();
+    })
   }
-
 }

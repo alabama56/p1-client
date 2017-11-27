@@ -2,12 +2,16 @@
 <div class='box'>
   <mat-card id="cardstyle2">
     <div class="img-container">
-    <img mat-card-avatar class="chirp-form-img" src="https://i0.wp.com/cdn.jotfor.ms/assets/img/v4/avatar/Podo-Avatar2-05.png?ssl=1" appCardHover class='chirp-card'>
+      <img mat-card-avatar class="chirp-form-img" src="https://i0.wp.com/cdn.jotfor.ms/assets/img/v4/avatar/Podo-Avatar2-05.png?ssl=1" appCardHover class='chirp-card'>
     </div>
-<textarea id="chirparea" placeholder="Whats happening"></textarea>
-<input id="subbtn" type="submit" value="Chirp">
-</mat-card>
-  </div>
+    <ng-container novalidate [formGroup]="form">
+      <mat-form-field id="chirpform">
+        <input matInput formControlName="message" id="chirparea" placeholder="Whats happening">
+      </mat-form-field>
+    </ng-container>
+    <button id="subbtn" (click)="subbmitChirp()" > Chirp </button>
+  </mat-card>
+</div>
 
 <mat-card id=cardstyle *ngFor='let chirp of chirps' (click)="openDialog(chirp)" appCardHover class='chirp-card'>
 

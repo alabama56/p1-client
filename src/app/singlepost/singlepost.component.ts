@@ -22,7 +22,7 @@ export class SinglepostComponent implements OnInit {
   }
 
   removeChirp() {
-    this.dataService.deleteChirp(this.chirp.id)
+    this.dataService.deleteChirp(this.chirp.user_id)
     .subscribe()
   }
 

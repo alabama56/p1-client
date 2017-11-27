@@ -66,10 +66,17 @@ export class ProfileComponent implements OnInit {
   }
 
   openUpdate(user): void {
-    let dialogRef = this.dialog.open(UpdateComponent, {
-      width: '35em',
-      data: { user }
-     
-    });
+    this.userSvc.me()
+    .subscribe((me) => {
+      if(me.id != user.id){
+        alert(`You are not authorized to edit this profile`)
+      }else {
+        let dialogRef = this.dialog.open(UpdateComponent, {
+          width: '35em',
+          data: { user }
+        });
+      }
+    })
+ 
   }
 }

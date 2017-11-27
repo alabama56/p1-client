@@ -25,6 +25,8 @@ export class SignupformComponent implements OnInit {
     email: ['', Validators.compose([Validators.required, Validators.email])],
     password: ['', Validators.required],
     age: ['', Validators.required],
+    pro_img: ["https://i0.wp.com/cdn.jotfor.ms/assets/img/v4/avatar/Podo-Avatar2-05.png?ssl=1"],
+    background_img: ["http://www.viadelivers.com/wp-content/uploads/2016/05/beach-background-landscape-tagged-wallpapers-95014.jpg"]
   })
 }
 
@@ -37,7 +39,9 @@ export class SignupformComponent implements OnInit {
     } else {
       let newUser = (this.form.value)
       this.svc.createUser(newUser)
-      .subscribe()
+      .subscribe(() => {
+        this.router.navigate(['/users'])
+      })
     }
   }
 

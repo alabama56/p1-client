@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 
 
 export interface IUser {
+  id?: number,
   name?: string,
 	username?: string;
   email?: string;
@@ -22,19 +23,20 @@ export interface IUser {
 @Injectable()
 export class UsersService {
 
- static api = '/api/users';
+  static api = '/api/users';
 
- users: Array<IUser> = [];
+  users: Array<IUser> = [];
+
+  user: IUser;
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any> {
     return this.http.get(UsersService.api)
-      
   }
+
   getUser(id: number): Observable<any> {
     return this.http.get(`${UsersService.api}/${id}`)
-      
   }
 
   createUser(user: IUser): Observable<any>{
@@ -50,7 +52,17 @@ export class UsersService {
     return this.http.put(`${UsersService.api}/${id}`, user)
   }
 
+  login(email: string, password: string): Observable<any>{
+    return this.http.post(`${UsersService.api}/login`, {email, password})
+    .map(user => this.user = user)
+  }
 
+  me() {
+    if(!this.user){
+      alert("You need to log in!")
+    }
+    return Observable.of(this.user)
+  }
 }
 
 

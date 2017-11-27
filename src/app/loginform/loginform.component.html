@@ -1,12 +1,15 @@
 <h2 class='h2'>Sign In</h2>
 
-<mat-card id="cardstyle" appCardHover class='form-container'>
+<mat-card id="cardstyle" [formGroup]="form" appCardHover class='form-container'>
   <mat-form-field>
-    <input matInput placeholder='Username'>
+    <input matInput formControlName="email" placeholder='email'>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder='Password'>
+    <input matInput formControlName="password"  placeholder='password'>
   </mat-form-field>
-  <button mat-button color='primary'>LOGIN</button>
+
+
+    <button mat-button md-button (click)="login()" color='primary'>LOGIN</button>
+  
 </mat-card>
