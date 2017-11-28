@@ -50,7 +50,6 @@ export class ListComponent implements OnInit {
     .then((user: any) => {
       this.user = user;
       this.renderer.setElementProperty(this.el.nativeElement, "src", user.pro_img);
-      
     },
     () => {
       this.openLogInDialog();
@@ -77,7 +76,6 @@ export class ListComponent implements OnInit {
       if (c.id === chirp.id) {
         c = chirp;
       }
-
       return c;
     });
   }
@@ -99,7 +97,6 @@ export class ListComponent implements OnInit {
     let dialogRef = this.dialog.open(LoginformComponent, {
       width: '30em',
       data: { }
-     
     });
   }
 }

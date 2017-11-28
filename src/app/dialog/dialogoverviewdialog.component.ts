@@ -16,6 +16,7 @@ export class DialogOverviewDialog {
   @ViewChild('message') messageInput: any;
   isEditing: boolean = false;
   onEdit = new EventEmitter();
+  onDelete = new EventEmitter();
   
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewDialog>,
@@ -29,17 +30,15 @@ export class DialogOverviewDialog {
     this.dialogRef.close();
   }
   
-
   updateChirp(chirp) {
     if (!this.isEditing) {
       this.isEditing = true;
       return;
     }
-
     this.userSvc.me()
     .then((me: any) => {
       if(me.id != this.data.chirp.user_id){
-        alert('You are not authorized to update this chirp')
+        alert('You are not authorized to update this chirp');
       } else {
         let id = this.data.chirp.id;
         let user_id = me.id;
@@ -53,6 +52,8 @@ export class DialogOverviewDialog {
             console.log(err);
           });
       }
+    },() => {
+      alert("you are not authorized to edit this chirp");
     })
   }
 
@@ -65,7 +66,9 @@ export class DialogOverviewDialog {
       }else{
         this.svc.deleteChirp(this.data.chirp.id)
         .subscribe(() => {
-          this.refresh();
+          this.dialogRef.close();
+          this.router.navigate(["/profile", me.id]);
+          
         })
       }
     },() => {
