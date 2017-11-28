@@ -6,6 +6,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 
 
+
 @Component({
   selector: 'app-users-page',
   templateUrl: './userspage.component.html',
@@ -24,6 +25,15 @@ export class UsersPageComponent implements OnInit {
   ngOnInit(): void {
     this.usersService.getUsers()
     .subscribe((response) => this.users = response);
+  }
+
+  ngAfterViewInit() {
+    this.usersService.me()
+    .then(() => {
+    },
+    () => {
+      this.openLogInDialog();
+    });
   }
 
   openLogInDialog(): void {
