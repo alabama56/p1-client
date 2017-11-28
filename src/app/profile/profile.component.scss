@@ -92,7 +92,7 @@ mat-card .title-margin {
 }
 
 .mat-drawer {
-    background-color: black;
+    background-color: rgba(189,189,189,0);
 }
   
 .following-img {
@@ -101,7 +101,7 @@ mat-card .title-margin {
 }
 
 .example-container {
-    min-height: 340px;
+    min-height: 45vh;
 }
 
 mat-card-subtitle .user-opacitiy {
@@ -112,3 +112,7 @@ mat-card .prof-pic-cover {
     background-size: cover;
 }
 
+
+/deep/ .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(189,189,189,0) !important;
+}
