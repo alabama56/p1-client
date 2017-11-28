@@ -45,7 +45,6 @@ import { UpdateComponent } from './update/update.component';
     FollowersComponent,
     SidenavComponent,
     UpdateComponent
-
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  chirps: Array<IChirp>;
+  chirps: Array<any>;
   chirp: IChirp;
   form: FormGroup;
 
@@ -39,7 +39,24 @@ export class ListComponent implements OnInit {
     let dialogRef = this.dialog.open(DialogOverviewDialog, {
       width: '35em',
       data: { chirp }
-     
+    });
+
+    dialogRef.componentInstance.onEdit.subscribe((chirp: any) => {
+      this.replaceEdittedChirp(chirp);
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      dialogRef.componentInstance.onEdit.unsubscribe();
+    });
+  }
+
+  replaceEdittedChirp(chirp: any) {
+    return this.chirps.map((c) => {
+      if (c.id === chirp.id) {
+        c = chirp;
+      }
+
+      return c;
     });
   }
 
