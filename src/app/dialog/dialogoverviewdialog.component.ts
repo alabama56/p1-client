@@ -37,7 +37,7 @@ export class DialogOverviewDialog {
     }
 
     this.userSvc.me()
-    .subscribe((me) => {
+    .then((me: any) => {
       if(me.id != this.data.chirp.user_id){
         alert('You are not authorized to update this chirp')
       } else {
@@ -56,13 +56,10 @@ export class DialogOverviewDialog {
     })
   }
 
-  test() {
-    console.log('test in dialouge box');
-  }
 
   deleteChirp(chirp) {
     this.userSvc.me()
-    .subscribe((me) => {
+    .then((me: any) => {
       if(me.id != this.data.chirp.user_id){
         alert('You are not authorized to delete this chirp')
       }else{
@@ -71,6 +68,8 @@ export class DialogOverviewDialog {
           this.refresh();
         })
       }
+    },() => {
+      alert('You are not authorized to delete this chirp')      
     })
   }
 

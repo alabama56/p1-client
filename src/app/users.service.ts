@@ -55,13 +55,17 @@ export class UsersService {
   login(email: string, password: string): Observable<any>{
     return this.http.post(`${UsersService.api}/login`, {email, password})
     .map(user => this.user = user)
+    
   }
 
   me() {
-    if(!this.user){
-      alert("You need to log in!")
-    }
-    return Observable.of(this.user)
+    return new Promise((resolve, reject) => {
+      if(!this.user){
+        reject();
+        return;
+      }
+        resolve(this.user);
+    });
   }
 }
 

@@ -1,11 +1,13 @@
-import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Inject, ViewChild, ElementRef, AfterViewInit, Renderer  } from '@angular/core';
 import { DataService, IChirp } from '../data.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogOverviewDialog } from "../dialog/dialogoverviewdialog.component";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsersService } from '../users.service';
+import { LoginformComponent } from "../loginform/loginform.component";
+
 
 
 
@@ -18,12 +20,16 @@ export class ListComponent implements OnInit {
   chirps: Array<any>;
   chirp: IChirp;
   form: FormGroup;
+  user: any;
 
   todayDate = new Date();
-
+  @ViewChild('profilePic') el: ElementRef
+  
   constructor(private dataService: DataService,
               private fb: FormBuilder, 
               private userSvc: UsersService,
+              private router: Router,
+              private renderer: Renderer,
               private dialog: MatDialog) 
               {this.form = this.fb.group({
                 message: ['', Validators.required]
@@ -31,8 +37,24 @@ export class ListComponent implements OnInit {
             }
 
   ngOnInit(): void {
+    this.getChirps();
+  }
+
+  getChirps() {
     this.dataService.getChirps()
     .subscribe((response) => this.chirps = response);
+  }
+
+  ngAfterViewInit() {
+    this.userSvc.me()
+    .then((user: any) => {
+      this.user = user;
+      this.renderer.setElementProperty(this.el.nativeElement, "src", user.pro_img);
+      
+    },
+    () => {
+      this.openLogInDialog();
+    });
   }
 
   openDialog(chirp): void {
@@ -62,13 +84,23 @@ export class ListComponent implements OnInit {
 
   subbmitChirp() {
     this.userSvc.me()
-    .subscribe((me) => {
+    .then((me: any) => {
       let user_id = me.id;
-      console.log(this.form.value)
       this.dataService.createChirp(user_id, this.form.value.message)
-      .subscribe()
+      .subscribe(() => {
+        this.getChirps();
+      })
+    },() => {
+      alert("you must be logged in to chirp")
     })
- 
+  }
+
+  openLogInDialog(): void {
+    let dialogRef = this.dialog.open(LoginformComponent, {
+      width: '30em',
+      data: { }
+     
+    });
   }
 }
 

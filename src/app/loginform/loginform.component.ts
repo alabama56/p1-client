@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { UsersService } from '../users.service';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-loginform',
@@ -13,6 +15,7 @@ export class LoginformComponent implements OnInit {
   form: FormGroup;
   
   constructor(private formBuilder: FormBuilder,
+    private router: Router,
     public dialogRef: MatDialogRef<LoginformComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private svc: UsersService) {this.form = this.formBuilder.group({
@@ -28,10 +31,10 @@ export class LoginformComponent implements OnInit {
   }
 
   login() {
-   
     this.svc.login(this.form.value.email, this.form.value.password)
     .subscribe((user) => {
      this.dialogRef.close();
+     this.router.navigate(["/profile", user.id]);
     })
   }
 }

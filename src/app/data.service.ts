@@ -26,9 +26,9 @@ export class DataService {
 
     getChirps(): Observable<any>  {
         return this.http.get(DataService.api)
-        // .map(chirps => {
-        //     return chirps.reverse();
-        // });
+        .map((chirps: Array<any>) => {
+            return chirps.reverse();
+        });
     }
 
     getChirpsByFollowing(id): Observable<any> {

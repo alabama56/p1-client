@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { LoginformComponent } from "./loginform/loginform.component"
+import { LoginformComponent } from "./loginform/loginform.component";
+import { Element } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { LoginformComponent } from "./loginform/loginform.component"
 })
 export class AppComponent {
   title = 'app';
+ 
 
   constructor(private dialog: MatDialog) { }
 
@@ -20,4 +22,6 @@ export class AppComponent {
      
     });
   }
+
+
 }

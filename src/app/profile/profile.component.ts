@@ -32,10 +32,6 @@ export class ProfileComponent implements OnInit {
   
 
   ngOnInit() {
-    const test = this.followSvc.getFollowers(91);
-    
-    
-    console.log(test);
     this.route.paramMap
       .switchMap((params: ParamMap) => {
         return this.svc.getChirpsByUser(params.get('id'))
@@ -52,7 +48,6 @@ export class ProfileComponent implements OnInit {
 
     this.route.paramMap
     .subscribe((params: ParamMap): any => {
-      console.log(params)
       this.followSvc.getFollowers(+params.get('id')).subscribe(res => this.followers = res);
     })
   }
@@ -67,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
   openUpdate(user): void {
     this.userSvc.me()
-    .subscribe((me) => {
+    .then((me: any) => {
       if(me.id != user.id){
         alert(`You are not authorized to edit this profile`)
       }else {
@@ -76,6 +71,8 @@ export class ProfileComponent implements OnInit {
           data: { user }
         });
       }
+    },() => {
+      alert(`You are not authorized to edit this profile`)
     })
  
   }
