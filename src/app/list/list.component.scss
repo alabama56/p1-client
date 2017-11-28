@@ -54,11 +54,14 @@
 .img-container {
     width: 100%;
     margin: 0;
+    text-align: center; 
 }
 
 .chirp-form-img {
     margin-left: auto;
     margin-right: auto;
+
+    
 }
 
 #subbtn{
@@ -70,4 +73,11 @@
     margin-top: 1em;
     border-radius: 0%;
     border-color: transparent;
+    margin: 0 auto;
+}
+
+img.chirp-card.mat-card-avatar {
+    width: 30%;
+    height: 35%;
+    margin-bottom: 0;
 }
